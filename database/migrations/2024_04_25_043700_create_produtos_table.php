@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('categoria', 55);
             $table->double('quantidade', 4);
             $table->double('valor_estimado', 8, 2)->default(0);
-            $table->foreignIdFor(Lista::class)->onDelete('cascade');
+            $table->foreignId('lista_id')->constrained('listas')->onDelete('cascade');
             $table->timestamps();
         });
     }
