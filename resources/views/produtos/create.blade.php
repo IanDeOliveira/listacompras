@@ -35,9 +35,6 @@
           </div>
         </label>
         <input class="form-control" type="file" id="field-imagem" name="imagem" style="display:none;">
-        @error('imagem')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror 
       </div>
       <br>
       <div class="form-group">

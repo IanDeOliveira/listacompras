@@ -40,22 +40,34 @@
       <br>
       <div class="form-group">
         <label for="nome">Nome:</label>
-        <input type="text" class="form-control" name="nome" value="{{ $produto->nome }}" placeholder="Digite um nome...">
+        <input type="text" class="form-control @error('nome') is-invalid @enderror" name="nome" value="{{ old('nome')??$produto->nome }}" placeholder="Digite um nome...">
+        @error('nome')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
       </div>
       <br>
       <div class="form-group">
         <label for="categoria">Categoria:</label>
-        <input type="text" class="form-control" name="categoria" value="{{ $produto->categoria }}" placeholder="Digite uma categoria...">
+        <input type="text" class="form-control @error('categoria') is-invalid @enderror" name="categoria" value="{{ old('categoria')??$produto->categoria }}" placeholder="Digite uma categoria...">
+        @error('categoria')
+          <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
       </div>
       <br>
       <div class="form-group">
         <label for="quantidade">Quantidade:</label>
-        <input type="number" class="form-control" name="quantidade" value="{{ $produto->quantidade }}" placeholder="Digite a quantidade que pretende comprar">
+        <input type="number" class="form-control" name="quantidade" value="{{ old('quantidade')??$produto->quantidade }}" placeholder="Digite a quantidade que pretende comprar">
+        @error('quantidade')
+          <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
       </div>
       <br>
       <div class="form-group">
         <label for="valor_estimado">Valor estimado:</label>
-        <input type="number" class="form-control" name="valor_estimado" value="{{ $produto->valor_estimado }}" placeholder="Digite o valor estimado do produto">
+        <input type="number" class="form-control" name="valor_estimado" value="{{ old('valor_estimado')??$produto->valor_estimado }}" placeholder="Digite o valor estimado do produto">
+        @error('valor_estimado')
+          <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
       </div>
       <br>
       <div class="form-group">
