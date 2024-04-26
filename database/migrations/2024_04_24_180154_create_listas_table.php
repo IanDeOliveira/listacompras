@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\Lista;
+use App\Models\User;
 
 return new class extends Migration
 {
@@ -14,14 +14,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('produtos', function (Blueprint $table) {
+        Schema::create('listas', function (Blueprint $table) {
             $table->id();
-            $table->string('imagem');
-            $table->string('nome', 55);
-            $table->string('categoria', 55);
-            $table->double('quantidade', 4);
-            $table->double('valor_estimado', 8, 2)->default(0);
-            $table->foreignIdFor(Lista::class);
+            $table->foreignIdFor(User::class);
             $table->timestamps();
         });
     }
@@ -33,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('produtos');
+        Schema::dropIfExists('listas');
     }
 };
