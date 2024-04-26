@@ -58,7 +58,7 @@
       <br>
       <div class="form-group">
         <label for="quantidade">Quantidade:</label>
-        <input type="number" class="form-control @error('quantidade') is-invalid @enderror" name="quantidade" placeholder="Digite a quantidade que pretende comprar" value="{{ old('title') }}">
+        <input type="number" class="form-control @error('quantidade') is-invalid @enderror" name="quantidade" placeholder="Digite a quantidade que pretende comprar" value="{{ old('quantidade') }}">
         @error('quantidade')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
