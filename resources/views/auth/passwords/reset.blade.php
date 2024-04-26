@@ -1,5 +1,7 @@
 @extends('layout')
 
+@section('title', 'Redefinir Senha')
+
 @section('content')
 <div class="container mt-5">
     <div class="row justify-content-center">
