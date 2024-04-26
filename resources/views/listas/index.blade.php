@@ -71,5 +71,4 @@
         <p class="text-muted font-italic mt-4">Ainda não ha listas criadas</p>
     @endif
 </div>
-
 @endsection
